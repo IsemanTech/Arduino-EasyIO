@@ -11,6 +11,10 @@ public:
     void pushTurnOn(int lPin, int bPin);
     //When bPin is pushed lPin turned off
     void pushTurnOff(int lPin, int bPin);
+    //Turn all of the leds on from least pin to greatest
+    void turnAllOn(int least, int greatest);
+    //Turn all of the leds off from least pin to greatest 
+    void turnAllOff(int least, int greatest);
     
 private:
     int ledPin;

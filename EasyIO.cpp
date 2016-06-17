@@ -55,6 +55,20 @@ void EasyIO::pushTurnOff(int lPin, int bPin)
     else
 	digitalWrite(ledPin, HIGH);
 }
-
+void EasyIO::turnAllOn(int least, int greatest)
+{
+    for (int led = least; led <= greatest; led++)
+	{
+	    digitalWrite(led, HIGH);
+	}
+}
+void EasyIO::turnAllOff(int least, int greatest)
+{
+    for (int led = least; led <= greatest; led++)
+	{
+	    digitalWrite(led, LOW);
+	}
+}
+	    
 	    
     
