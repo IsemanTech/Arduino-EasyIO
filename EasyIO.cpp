@@ -27,7 +27,7 @@ void EasyIO::initButton(int bPin)
 {
     pinMode(bPin, INPUT);
 }
-void EasyIO::pushTurnOn(int lPin, int bPin)
+bool EasyIO::pushTurnOn(int lPin, int bPin)
 {
     ledPin = lPin;
     buttonPin = bPin;
@@ -37,9 +37,15 @@ void EasyIO::pushTurnOn(int lPin, int bPin)
 	{
 	    delay(150);
 	    digitalWrite(ledPin, HIGH);
+	    isPushed = true;
 	}
     else
-	digitalWrite(ledPin, LOW);
+	{
+	    digitalWrite(ledPin, LOW);
+	    isPushed = false;
+	}
+    return isPushed;
+    
 }
 void EasyIO::pushTurnOff(int lPin, int bPin)
 {
