@@ -35,8 +35,9 @@ bool EasyIO::pushTurnOn(int lPin, int bPin)
     int buttonState = digitalRead(buttonPin);
     if (buttonState == HIGH)
 	{
-	    delay(150);
+	    delay(200); //original 150
 	    digitalWrite(ledPin, HIGH);
+	    delay(150);
 	    isPushed = true;
 	}
     else
@@ -55,7 +56,7 @@ void EasyIO::pushTurnOff(int lPin, int bPin)
     int buttonState = digitalRead(buttonPin);
     if (buttonState == HIGH)
 	{
-	    delay(150);
+	    delay(150); 
 	    digitalWrite(ledPin, LOW);
 	}
     else
